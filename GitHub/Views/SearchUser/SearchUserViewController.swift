@@ -17,6 +17,10 @@ final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+        configureSearchController()
+    }
+    private func configureTableView() {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.tableFooterView = .init()
@@ -28,6 +32,9 @@ final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    private func configureSearchController() {
+        
     }
 }
 
