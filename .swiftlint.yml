@@ -27,8 +27,7 @@ opt_in_rules:
 # 下記は対象に含めない
 excluded:
 - Carthage/
-- GitHub
-- GitHubTests
+- KuriTemplate/
 
 # 1行の文字列制限
 line_length:

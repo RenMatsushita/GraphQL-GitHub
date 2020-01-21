@@ -17,6 +17,10 @@ targets:
     dependencies:
       - carthage: ImagePipeline
       - target: GitHubCore
+    preBuildScripts:
+      - path: /bin/sh
+        name: SwiftLint
+        script: sh Script/swift_lint.sh
 
   GitHubTests:
     type: bundle.unit-test
@@ -46,6 +50,10 @@ targets:
       - carthage: RxSwift
       - carthage: RxCocoa
       - carthage: RxRelay
+    preBuildScripts:
+      - path: /bin/sh
+        name: SwiftLint
+        script: sh Script/swift_lint.sh
 
   GitHubCoreTests:
     type: bundle.unit-test
