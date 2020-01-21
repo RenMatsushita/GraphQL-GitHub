@@ -1,0 +1,60 @@
+name: GitHub
+options:
+  developmentLanguage: ja
+targets:
+  GitHub:
+    type: application
+    platform: iOS
+    deploymentTarget: 13.0
+    sources:
+      - path: GitHub
+    scheme: {}
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomoki-sun.GitHub
+        INFOPLIST_FILE: GitHub/Resources/Info.plist
+    dependencies:
+      - carthage: ImagePipeline
+      - target: GitHubCore
+
+  GitHubTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: GitHubTests
+    dependencies:
+      - target: GitHub
+      - carthage: RxTest
+    scheme:
+      testTargets:
+        - GitHubTests
+
+  GitHubCore:
+    type: framework
+    platform: iOS
+    deploymentTarget: 13.0
+    sources:
+      - path: GitHubCore
+    scheme: { }
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomoki-sun.GitHubCore
+        INFOPLIST_FILE: GitHubCore/Info.plist
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
+
+  GitHubCoreTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: GitHubCoreTests
+    dependencies:
+      - target: GitHubCore
+      - carthage: RxTest
+    scheme:
+      testTargets:
+        - GitHubCoreTests
