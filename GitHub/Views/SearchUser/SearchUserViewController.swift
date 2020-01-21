@@ -13,6 +13,7 @@ final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        navigationItem.title = "GitHub"
         
         configureTableView()
         configureSearchController()
