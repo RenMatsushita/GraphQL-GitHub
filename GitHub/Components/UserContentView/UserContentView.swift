@@ -6,7 +6,7 @@ final class UserContentView: UIView, BackingViewMaker, ReusableViewType {
     @IBOutlet private weak var nameLabel: UILabel!
     
     static func makeBackedView() -> UserContentView {
-        return UserContentView()
+        return UserContentView.loadFromNib()
     }
     func update(for name: String) {
         nameLabel.text = name

@@ -1,10 +1,3 @@
-//
-//  TableViewCell.swift
-//  GitHub
-//
-//  Created by tomoki_sun on 2020/01/06.
-//
-
 import UIKit
 
 final class TableViewCell<Maker: BackingViewMaker>: UITableViewCell {

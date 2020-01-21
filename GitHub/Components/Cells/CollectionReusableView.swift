@@ -1,10 +1,3 @@
-//
-//  CollectionReusableView.swift
-//  GitHub
-//
-//  Created by tomoki_sun on 2020/01/06.
-//
-
 import UIKit
 
 enum CollectionViewSupplementaryKind {
