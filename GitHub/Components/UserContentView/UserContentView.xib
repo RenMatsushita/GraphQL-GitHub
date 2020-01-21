@@ -15,9 +15,6 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-Bv-dAr">
                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="dU9-gd-EGj"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -25,9 +22,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="w3m-Bv-dAr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="81Y-ba-12V"/>
+                <constraint firstItem="w3m-Bv-dAr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="81Y-ba-12V"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="w3m-Bv-dAr" secondAttribute="bottom" id="Gq9-Ie-fnh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="w3m-Bv-dAr" secondAttribute="trailing" constant="16" id="Z3x-tg-3hN"/>
+                <constraint firstAttribute="trailing" secondItem="w3m-Bv-dAr" secondAttribute="trailing" constant="16" id="Z3x-tg-3hN"/>
                 <constraint firstItem="w3m-Bv-dAr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uat-fu-Ex5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

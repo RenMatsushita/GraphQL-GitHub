@@ -1,5 +1,6 @@
 import UIKit
-import GitHubCore
+import RxSwift
+import RxCocoa
 
 final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
     
@@ -8,21 +9,27 @@ final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
     private let resultController = SearchResultViewBuilder.make()
     
     var presenter: SearchUserPresenter!
+    private let dataSource = SearchUserDataSource()
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         navigationItem.title = "GitHub"
-        
         configureTableView()
         configureSearchController()
+        
+        presenter.items
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
     private func configureTableView() {
         tableView.delegate = self
-        tableView.separatorStyle = .none
+        tableView.rowHeight = 44
         tableView.tableFooterView = .init()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        TableViewCell<UserContentView>.register(to: tableView)
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
