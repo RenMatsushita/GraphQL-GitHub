@@ -1,21 +1,17 @@
 import UIKit
-import GitHubCore
 
-final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
+final class SearchResultViewController: UIViewController, SearchResultViewProtocol {
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
-    private lazy var searchController = UISearchController(searchResultsController: self.resultController)
-    private let resultController = SearchResultViewBuilder.make()
-    
-    var presenter: SearchUserPresenter!
-    
+
+    var presenter: SearchResultPresenter!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         
         configureTableView()
-        configureSearchController()
     }
     private func configureTableView() {
         tableView.delegate = self
@@ -30,21 +26,14 @@ final class SearchUserViewController: UIViewController, SearchUserViewProtocol {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    private func configureSearchController() {
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.delegate = self
-        self.definesPresentationContext = true
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchResultsUpdater = resultController
-    }
 }
-
-extension SearchUserViewController: UITableViewDelegate {
+extension SearchResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
-extension SearchUserViewController: UISearchControllerDelegate {
-    
+extension SearchResultViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.searchTextField.text ?? "")
+    }
 }
