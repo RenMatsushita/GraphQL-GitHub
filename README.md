@@ -12,3 +12,4 @@ $ make all
 
 
 
+`GitHub.shared.token` にGitHubPersonalTokenを仕込む
